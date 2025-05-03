@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Media, Canvas, and SVG Example</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      margin: 10px;
+    }
+    svg {
+      border: 1px solid black;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Audio Tag with Properties</h2>
+  <audio controls muted loop autoplay>
+    <source src="sortdemo_qb45_quick-104887.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <h2>Video Tag with Properties</h2>
+  <video width="320" height="240" muted loop autoplay controls>
+    <source src="100914-video-720.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <h2>Canvas Shapes</h2>
+  <canvas id="myCanvas" width="300" height="200"></canvas>
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Rectangle
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(10, 10, 100, 50);
+
+    // Circle
+    ctx.beginPath();
+    ctx.arc(200, 60, 40, 0, Math.PI * 2);
+    ctx.fillStyle = 'green';
+    ctx.fill();
+
+    // Triangle
+    ctx.beginPath();
+    ctx.moveTo(150, 150);
+    ctx.lineTo(200, 180);
+    ctx.lineTo(100, 180);
+    ctx.closePath();
+    ctx.fillStyle = 'red';
+    ctx.fill();
+  </script>
+
+  <h2>SVG Shapes</h2>
+  <svg width="300" height="200">
+    <!-- Rectangle -->
+    <rect x="10" y="10" width="100" height="50" fill="blue" />
+
+    <!-- Circle -->
+    <circle cx="200" cy="60" r="40" fill="green" />
+
+    <!-- Triangle -->
+    <polygon points="150,150 200,180 100,180" fill="red" />
+  </svg>
+
+</body>
+</html>
